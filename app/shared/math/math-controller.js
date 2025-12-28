@@ -19,7 +19,7 @@ mathController.addition = (req, res) => {
     } else {
         return res.status(apiStatus.INTERNAL_SERVER_ERROR.status).json({
             success: false,
-            result: apiStatus.INTERNAL_SERVER_ERROR.message,
+            result: apiStatus.INTERNAL_SERVER_ERROR.result,
         });
     }
 };
@@ -40,7 +40,7 @@ mathController.subtraction = (req, res) => {
     } else {
         return res.status(apiStatus.INTERNAL_SERVER_ERROR.status).json({
             success: false,
-            result: apiStatus.INTERNAL_SERVER_ERROR.message,
+            result: apiStatus.INTERNAL_SERVER_ERROR.result,
         });
     }
 };
@@ -61,7 +61,7 @@ mathController.multiplication = (req, res) => {
     } else {
         return res.status(apiStatus.INTERNAL_SERVER_ERROR.status).json({
             success: false,
-            result: apiStatus.INTERNAL_SERVER_ERROR.message,
+            result: apiStatus.INTERNAL_SERVER_ERROR.result,
         });
     }
 };
@@ -82,7 +82,7 @@ mathController.division = (req, res) => {
     } else {
         return res.status(apiStatus.INTERNAL_SERVER_ERROR.status).json({
             success: false,
-            result: apiStatus.INTERNAL_SERVER_ERROR.message,
+            result: apiStatus.INTERNAL_SERVER_ERROR.result,
         });
     }
 };
