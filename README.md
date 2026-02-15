@@ -1,97 +1,119 @@
-# nodejs-clean-architecture-api
+# Node.js Clean Architecture API
 
-NodeJS API build on Clean Architecture using express framework and mongodb.
+A scalable NodeJS REST API built with Clean Architecture principles using Express and MongoDB.
 
-## Run in docker
+## Features
 
-Make sure you have docker installed. At the root folder run the following command:
+- Clean Architecture pattern for maintainability
+- RESTful API endpoints for student management
+- MongoDB integration
+- Docker support
+- Comprehensive test coverage
+- Environment-based configuration
 
+## Tech Stack
+
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MongoDB
+- **Containerization**: Docker
+- **Testing**: Jest
+
+
+## Installation
+
+### Prerequisites
+- Node.js (v14+)
+- Docker (optional)
+
+### Steps
+
+1. Clone the repository
 ```bash
-  docker-compose up -d
+git clone https://github.com/shashankbiet/nodejs-clean-architecture-api.git
+cd nodejs-clean-architecture-api
 ```
 
-## Run Locally
-
-Clone the project
-
+2. Install dependencies
 ```bash
-  git clone https://github.com/shashankbiet/nodejs-clean-architecture-api
+npm i
 ```
 
-Go to the project directory
-
+3. Configure environment variables
 ```bash
-  cd nodejs-clean-architecture-api
+cp .env.example .env
 ```
 
-Install dependencies
+## Environment Variables
 
-```bash
-  npm i
+```
+MONGODB_URI=mongodb://localhost:27017/students
+PORT=3001
+NODE_ENV=development
 ```
 
-Start the server
+## Running the Application
 
+### Locally
 ```bash
-  npm run dev
+npm run dev
 ```
 
-## Running Tests
-
-To run tests, run the following command
-
+### With Docker
 ```bash
-  npm run test
+docker-compose up -d
 ```
 
-## API Reference
+The API will be available at `http://localhost:5000`
 
-#### Get all students
+## Usage Examples
 
+### Get all students
 ```http
-  GET /api/student
+GET /api/student
 ```
 
-#### Get student by id
-
+### Get student by ID
 ```http
-  GET /api/student/${_id}
+GET /api/student/65a1b2c3d4e5f6g7h8i9j0k1
 ```
 
-#### Create student
-
+### Create student
 ```http
-  POST /api/student
-```
+POST /api/student
+Content-Type: application/json
 
-```bash
-  {
-    "id": 101,
-    "name": "John",
-    "gender":"male",
-    "email":"john@test.com",
-    "mobileNo":1234567890
+{
+  "name": "John Doe",
+  "gender": "male",
+  "email": "john@test.com",
+  "mobileNo": "1234567890"
 }
 ```
 
-#### Update student by id
-
+### Update student
 ```http
-  PUT /api/student/${_id}
-```
+PUT /api/student/65a1b2c3d4e5f6g7h8i9j0k1
+Content-Type: application/json
 
-```bash
-  {
-    "id": 101,
-    "name": "Johnny",
-    "gender":"male",
-    "email":"johnny@test.com",
-    "mobileNo":2224567890
+{
+  "name": "Jane Doe",
+  "email": "jane@test.com"
 }
 ```
 
-#### Delete student by id
-
+### Delete student
 ```http
-  DELETE /api/student/${_id}
+DELETE /api/student/65a1b2c3d4e5f6g7h8i9j0k1
 ```
+
+## Testing
+
+Run tests with the following command:
+```bash
+npm run test
+```
+
+## License
+
+MIT License - see LICENSE file for details
